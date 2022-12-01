@@ -26,29 +26,30 @@ FILE=$1
 
 if [ $FILE == "dataset-VCC" ]; then
     # VCC dataset including 4 speakers
-    URL=http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/data/mvae-ss/vcc.zip
-    ZIP_FILE=./data/vcc.zip
-    mkdir -p ./data/
+    URL=http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/data/mvae/vcc.zip
+    mkdir -p ../data/
+    ZIP_FILE=../data/vcc.zip
     wget --progress=bar:force $URL -O $ZIP_FILE 2>&1 | progressfilt
-    unzip -qq $ZIP_FILE -d ./data/
+    unzip -qq $ZIP_FILE -d ../data/
     rm $ZIP_FILE
 
 elif [ $FILE == "test-samples" ]; then
     # test samples for VCC dataset
-    URL=http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/data/mvae-ss/test_input.zip
-    ZIP_FILE=./data/test_input.zip
-    mkdir -p ./data/
+    URL=http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/data/mvae/test_input.zip
+    mkdir -p ../data/
+    ZIP_FILE=../data/test_input.zip
     wget --progress=bar:force $URL -O $ZIP_FILE 2>&1 | progressfilt
-    unzip -qq $ZIP_FILE -d ./data/
+    unzip -qq $ZIP_FILE -d ../data/
     rm $ZIP_FILE
 
 elif [ $FILE == "models" ]; then
     # pretrained models 
-    URL=http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/data/mvae-ss/models.zip
-    ZIP_FILE=./pretrained_model/models.zip
-    mkdir -p ./pretrained_model/
+    URL=http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/data/mvae/models.zip
+    mkdir -p ../model/
+    ZIP_FILE=../model/models.zip
     wget --progress=bar:force $URL -O $ZIP_FILE 2>&1 | progressfilt
-    unzip -qq $ZIP_FILE -d ./pretrained_model/
+    unzip -qq $ZIP_FILE -d ../model/
+    mv ../model/models/ ../model/pretrained_model/
     rm $ZIP_FILE
 
 else
