@@ -51,7 +51,7 @@ $ ./run.sh --stage 0 --stop_stage 1 --algorithm FastMVAE2 --dataset vcc --test_m
 More details are available in the `run.sh` bash file.
 
 ## License and citations
-License: [MIT](https://choosealicense.com/licenses/mit/)
+License: Creative Commons Attribution-NonCommercial-NoDerivs (CC-BY-NC-ND)
 
 If you find this work is useful for your research or project, please cite out papers:
 
